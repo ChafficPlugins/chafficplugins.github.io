@@ -1,13 +1,12 @@
 # ChafficPlugins
-## We create role play based plugins for minecraft spigot servers.
 
-### Facts
+## Facts
 
 - over 10k downloads
 - more than 900 servers with over 500 players are using our plugins
 
-### Plugins
-#### MyTrip
+## Plugins
+### MyTrip
 [Info](https://chafficplugins.github.io/MyTrip)
 
 [Songoda](https://songoda.com/marketplace/product/mytrip-mytrip-amazing-drugs-in-minecraft.342)
@@ -18,7 +17,7 @@
 
 [GitHub](https://github.com/ChafficPlugins/MyTrip)
 
-#### CrucialAPI
+### CrucialAPI
 (This is a ChafficPlugins project maintained by [Chaffic](https://github.com/Chafficui))
 
 [Spigot](https://www.spigotmc.org/resources/crucialapi.86380/)
