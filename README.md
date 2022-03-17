@@ -7,6 +7,8 @@
 
 ### Plugins
 #### MyTrip
+[Info](https://chafficplugins.github.io/MyTrip)
+
 [Songoda](https://songoda.com/marketplace/product/mytrip-mytrip-amazing-drugs-in-minecraft.342)
 
 [Spigot](https://www.spigotmc.org/resources/mytrip-amazing-drugs-in-minecraft.76816/)
