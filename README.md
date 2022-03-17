@@ -1,6 +1,6 @@
 ## We create role play based plugins for minecraft spigot servers.
 
-###Facts
+### Facts
 
 - over 10k downloads
 - more than 900 servers with over 500 players are using our plugins
