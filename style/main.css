@@ -35,12 +35,12 @@ button:hover {
     cursor: pointer;
 }
 
-#adContainer {
+#hostingConatiner {
     margin: 3rem;
     text-align: center;
 }
 
-#ad {
+#hosting {
     width: 100%;
     text-align: center;
     color: var(--color-quaternary);
@@ -48,7 +48,7 @@ button:hover {
     font-size: 1.5rem;
 }
 
-#ad:hover {
+#hosting:hover {
     color: var(--color-secondary);
     font-weight: bold;
 }
