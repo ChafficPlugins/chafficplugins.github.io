@@ -5,13 +5,15 @@ html {
     --color-quaternary: #ffd1ff;
     --color-background: #000000;
     background-color: var(--color-background);
+    color: var(--color-primary);
 }
 
 #bgImg {
-    position: fixed;
-    top: -5rem;
+    /* center this */
+    position: absolute;
+    top: 15rem;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     z-index: -1;
 }
 
@@ -30,14 +32,17 @@ button {
 button:hover {
     color: var(--color-primary);
     background-color: var(--color-secondary);
+    cursor: pointer;
+}
+
+#adContainer {
+    margin: 3rem;
+    text-align: center;
 }
 
 #ad {
-    position: fixed;
-    top: 50rem;
-    left: 50%;
-    transform: translate(-50%);
-    z-index: -1;
+    width: 100%;
+    text-align: center;
     color: var(--color-quaternary);
     text-decoration: none;
     font-size: 1.5rem;
@@ -49,36 +54,31 @@ button:hover {
 }
 
 #copyright {
-    position: fixed;
-    bottom: 0;
-    z-index: -1;
+    margin-top: 5rem;
+    text-align: center;
     color: var(--color-quaternary);
     text-decoration: none;
     font-size: 1rem;
 }
 
 .plugin-list {
-    position: fixed;
-    left: 50%;
-    top: 40rem;
-    transform: translate(-50%, -50%);
     display: flex;
     align-content: center;
     flex-wrap: wrap;
     justify-content: center;
     width: 60%;
+    margin: 2rem auto;
 }
 
 .plugin-list:hover {
-    transform: translate(-50%, -50%) scale(1.1);
+    /* make it bigger */
+    transform: scale(1.1);
 }
 
 #centeredTitle {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: 10em;
-    top: 5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 10vw;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     color: var(--color-primary);
@@ -87,16 +87,28 @@ button:hover {
 
 #centeredSubTitle {
     font-size: 3em;
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    top: 22rem;
     text-align: center;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     color: var(--color-background);
     text-shadow: 0 0 1rem var(--color-tertiary);
-    width: 90%;
+    width: 100%;
+}
+
+.statsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    width: 60%;
+    margin: 5rem auto;
+    padding: 1rem;
+    background-color: var(--color-quaternary);
+    color: var(--color-background);
+    text-shadow: 0 0 1rem var(--color-secondary);
+    border-radius: 1rem;
+
 }
 
 @media screen and (max-width: 800px) {
@@ -109,22 +121,18 @@ button:hover {
         font-size: 3.5rem;
     }
     #centeredSubTitle {
-        top: 10rem;
         font-size: 1.8em;
     }
 
     .plugin-list {
         width: 80%;
-        top: 30rem;
-    }
-
-    #ad {
-        top: 40rem;
-        width: 100%;
-        text-align: center;
     }
 
     button {
         width: 100%;
+    }
+
+    .statsContainer {
+        width: 80%;
     }
 }
