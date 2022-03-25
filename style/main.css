@@ -105,8 +105,6 @@ button:hover {
 .statsContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
     width: 60%;
     margin: 5rem auto;
