@@ -14,6 +14,8 @@ html {
     top: 15rem;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    overflow: hidden;
     z-index: -1;
 }
 
@@ -26,6 +28,7 @@ button {
     padding: 0.5rem;
     font-size: 1.5rem;
     font-family: "Arial Black", Gadget, sans-serif;
+    text-align: center;
     width: 15rem;
 }
 
@@ -68,15 +71,19 @@ button:hover {
     justify-content: center;
     width: 60%;
     margin: 2rem auto;
+    transition: transform 0.5s;
 }
 
 .plugin-list:hover {
     /* make it bigger */
     transform: scale(1.1);
+    /* take some time to scale */
+    transition: transform 0.5s;
 }
 
 #centeredTitle {
     width: 100%;
+    overflow: hidden;
     text-align: center;
     font-size: 10vw;
     font-weight: bold;
@@ -98,8 +105,6 @@ button:hover {
 .statsContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
     width: 60%;
     margin: 5rem auto;
