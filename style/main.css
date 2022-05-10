@@ -3,7 +3,7 @@ html {
     --color-secondary: #fd31ff;
     --color-tertiary: #ffd1ff;
     --color-quaternary: #ffd1ff;
-    --color-background: #000000;
+    --color-background: #080808;
     background-color: var(--color-background);
     color: var(--color-primary);
 }
@@ -44,16 +44,15 @@ button:hover {
 }
 
 #hosting {
-    width: 100%;
     text-align: center;
-    color: var(--color-quaternary);
-    text-decoration: none;
-    font-size: 1.5rem;
+    width: 15rem;
+    margin-bottom: 0.5rem;
+    border: 0.2rem solid var(--color-primary);
 }
 
 #hosting:hover {
-    color: var(--color-secondary);
-    font-weight: bold;
+    width: 15.5rem;
+    margin-bottom: 0;
 }
 
 #copyright {
@@ -140,4 +139,23 @@ button:hover {
     .statsContainer {
         width: 80%;
     }
+}
+
+#imprintLink {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+}
+
+#imprintLink:hover {
+    text-decoration: underline;
+}
+
+#imprintLink:active {
+    color: var(--color-tertiary);
 }
