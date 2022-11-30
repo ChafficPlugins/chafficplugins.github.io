@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChafficPlugins</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+<h1 id="centeredTitle">ChafficPlugins</h1>
+<h3 id="centeredSubTitle">Free high quality plugins for your Minecraft server!</h3>
+<img src="img/bg.gif" alt="" id="bgImg" onclick="window.open('https://chafficplugins.github.io')">
+
+<!-- Wait 5 Seconds and then enable download button -->
+<script>
+    for (let i = 0; i <= 5; i++) {
+        setTimeout(() => {
+
+            document.getElementById("downloadButton").innerText = "Wait " + (5 - i) + " Seconds and then enable download button";
+            if (i === 5) {
+                document.getElementById("downloadButton").disabled = false;
+                document.getElementById("downloadButton").innerText = "Download";
+            }
+        }, 1000 * i);
+    }
+
+    function download() {
+        //get ?plugin parameter and ?version parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const plugin = urlParams.get('plugin');
+        const version = urlParams.get('version');
+        window.open("https://github.com/ChafficPlugins/MyTrip/releases/download/v" + version + "/" + plugin + "-v" + version + ".jar")
+    }
+</script>
+
+<div class="plugin-list">
+    <button id="downloadButton"
+            onclick="download()"
+            disabled>
+        Wait 5 Seconds and then enable download button
+    </button>
+</div>
+
+<div id="hostingConatiner">
+    <a href="https://shockbyte.com/billing/aff.php?aff=4416"><img id="hosting"
+                                                                  src="https://shockbyte.com/assets/img/partners/twitch/shockbyte_affiliate.png"
+                                                                  alt="Minecraft Server Hosting"/></a>
+</div>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4734982214094550"
+        crossorigin="anonymous"></script>
+
+<a id="imprintLink" href="https://felixbeinssen.net/imprint" target={"_blank"}
+   rel="noreferrer">Imprint</a>
+
+<footer>
+    <p id="copyright">
+        © ChafficPlugins 2019-2022
+    </p>
+</footer>
+</body>
+</html>

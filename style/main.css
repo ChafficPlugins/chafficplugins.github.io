@@ -4,7 +4,7 @@ html {
     --color-tertiary: #ffd1ff;
     --color-quaternary: #ffd1ff;
     --color-background: #080808;
-    background-color: var(--color-background);
+    background-color: #000000;
     color: var(--color-primary);
 }
 
@@ -36,6 +36,12 @@ button:hover {
     color: var(--color-primary);
     background-color: var(--color-secondary);
     cursor: pointer;
+}
+
+button:disabled {
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+    cursor: not-allowed;
 }
 
 #hostingConatiner {
