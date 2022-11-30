@@ -20,7 +20,10 @@
             document.getElementById("downloadButton").innerText = "Wait " + (5 - i) + " Seconds";
             if (i === 5) {
                 document.getElementById("downloadButton").disabled = false;
-                document.getElementById("downloadButton").innerText = "Download";
+                const urlParams = new URLSearchParams(window.location.search);
+                const plugin = urlParams.get('plugin');
+                const version = urlParams.get('version');
+                document.getElementById("downloadButton").innerText = "Download " + plugin + "-v" + version;
             }
         }, 1000 * i);
     }
