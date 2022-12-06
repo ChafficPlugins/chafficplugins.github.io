@@ -25,9 +25,12 @@
         setTimeout(() => {
 
             document.getElementById("downloadButton").innerText = "Wait " + (5 - i) + " Seconds";
+            document.getElementById("scrollButton").innerText = "Wait " + (5 - i) + " Seconds";
             if (i === 5) {
                 document.getElementById("downloadButton").disabled = false;
                 document.getElementById("downloadButton").innerText = "Download " + plugin + "-v" + version;
+                document.getElementById("scrollButton").disabled = false;
+                document.getElementById("scrollButton").innerText = "Scroll Down";
             }
         }, 1000 * i);
     }
@@ -36,11 +39,28 @@
         //get ?plugin parameter and ?version parameter
         window.open("https://github.com/ChafficPlugins/" + plugin + "/releases/download/v" + version + "/" + plugin + "-v" + version + ".jar")
     }
+
+    function scrollDown() {
+        //scroll down to the download button slowly
+        window.scrollBy({
+            top: 1000,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
 </script>
 
 <div class="plugin-list">
     <a id="hostingURL" href="https://shockbyte.com/billing/aff.php?aff=4416" target={"_blank"}
        rel="noreferrer">Cheap Minecraft Server Hosting</a>
+</div>
+
+<div class="plugin-list">
+    <button id="scrollButton" disabled class="button" onclick="scrollDown()">Wait 5 seconds</button>
+</div>
+
+<div class="hostingConatiner" style="overflow: hidden">
+    <a href="https://www.origin-builds.com/?ref=IZk3OwsW" rel="sponsored" target="_blank"><img src="https://creatives.goaffpro.com/7044247/1670269971417.jpg" alt="" /></a>
 </div>
 
 <div class="plugin-list">

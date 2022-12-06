@@ -3,7 +3,7 @@ html {
     --color-secondary: #fd31ff;
     --color-tertiary: #ffd1ff;
     --color-quaternary: #ffd1ff;
-    --color-background: #080808;
+    --color-background: #1e1e1e;
     background-color: var(--color-background);
     color: var(--color-primary);
 }
