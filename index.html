@@ -1,60 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4734982214094550"
-            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>ChafficPlugins</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChafficPlugins - Free Minecraft Server Plugins</title>
+    <meta name="description" content="Open-source Minecraft server plugins. Drugs, mining progression, and developer tools.">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4734982214094550" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 id="centeredTitle">ChafficPlugins</h1>
-<h3 id="centeredSubTitle">Free high quality plugins for your Minecraft server!</h3>
-<img src="img/bg.png" alt="" id="bgImg" onclick="window.open('https://chafficplugins.github.io')">
 
-<div class="plugin-list">
-    <button onclick="window.open('https://www.spigotmc.org/resources/mytrip-amazing-drugs-in-minecraft.76816/')">
-        MyTrip
-    </button>
-    <button onclick="window.open('https://www.spigotmc.org/resources/mininglevels.100886/')">
-        MiningLevels
-    </button>
-    <button onclick="window.open('https://github.com/Chafficui/CrucialAPI')">
-        CrucialAPI
-    </button>
-</div>
+<div class="bg-decoration"></div>
 
-<div class="hostingConatiner">
-    <a href="https://shockbyte.com/billing/aff.php?aff=4416"><img id="hosting" src="https://shockbyte.com/assets/img/partners/twitch/shockbyte_affiliate.png" alt="Minecraft Server Hosting" /></a>
-</div>
-
-<div class="statsContainer">
-    <div>
-        <h3>Over 31k downloads</h3>
-        <p>With over 31k server owners who have used our plugins since 2019, ChafficPlugins is a known force in the
-            field.</p>
+<!-- Hero -->
+<header class="hero fade-in">
+    <div class="hero-logo" onclick="window.location.href='https://chafficplugins.github.io'">
+        <img src="img/favicon.ico" alt="ChafficPlugins">
     </div>
-    <div>
-        <h3>4.7 star rating</h3>
-        <p>Our products have over 21 reviews, of which 20 had over 4 stars. So it is clear that quality is our top
-            priority!</p>
-    </div>
-    <div>
-        <h3>Over 1000 active players</h3>
-        <p>ChafficPlugins has reached a peak of 1.7k players at once and makes servers more active.</p>
-    </div>
-</div>
+    <h1 class="hero-title">ChafficPlugins</h1>
+    <p class="hero-subtitle">Open-source Minecraft server plugins, actively maintained since 2019.</p>
+</header>
 
-<a id="imprintLink" href="https://felixbeinssen.net/imprint" target={"_blank"}
-   rel="noreferrer">Imprint</a>
+<!-- Plugins -->
+<section class="section fade-in fade-in-delay-1">
+    <p class="section-label">Plugins</p>
+    <h2 class="section-title">What We Make</h2>
 
-<footer>
-    <p id="copyright">
-        © ChafficPlugins 2019-2023
-    </p>
+    <div class="plugin-grid">
+        <article class="plugin-card">
+            <div class="plugin-card-icon">&#x1F48A;</div>
+            <span class="plugin-card-tag">Spigot Plugin</span>
+            <h3 class="plugin-card-name">MyTrip</h3>
+            <p class="plugin-card-desc">Custom drugs for Minecraft. Create substances with unique crafting recipes, effects, and prices.</p>
+            <a class="plugin-card-link" href="https://www.spigotmc.org/resources/mytrip-amazing-drugs-in-minecraft.76816/" target="_blank" rel="noopener noreferrer">
+                View on SpigotMC
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+            </a>
+        </article>
+
+        <article class="plugin-card">
+            <div class="plugin-card-icon">&#x26CF;&#xFE0F;</div>
+            <span class="plugin-card-tag">Spigot Plugin</span>
+            <h3 class="plugin-card-name">MiningLevels</h3>
+            <p class="plugin-card-desc">Progression-based mining. Players gain XP, level up, and unlock access to higher-tier ores and tools.</p>
+            <a class="plugin-card-link" href="https://www.spigotmc.org/resources/mininglevels.100886/" target="_blank" rel="noopener noreferrer">
+                View on SpigotMC
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+            </a>
+        </article>
+
+        <article class="plugin-card">
+            <div class="plugin-card-icon">&#x2699;&#xFE0F;</div>
+            <span class="plugin-card-tag">API / Library</span>
+            <h3 class="plugin-card-name">CrucialAPI</h3>
+            <p class="plugin-card-desc">Shared library used across our plugins. Handles common utilities, configs, and version management.</p>
+            <a class="plugin-card-link" href="https://github.com/Chafficui/CrucialAPI" target="_blank" rel="noopener noreferrer">
+                View on GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+            </a>
+        </article>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="section fade-in fade-in-delay-2">
+    <p class="section-label">Usage</p>
+    <h2 class="section-title">At a Glance</h2>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div>
+                <div class="stat-number">31k+</div>
+                <div class="stat-label">Downloads</div>
+            </div>
+            <p class="stat-desc">Total downloads across all plugins since 2019.</p>
+        </div>
+        <div class="stat-card">
+            <div>
+                <div class="stat-number">4.7</div>
+                <div class="stat-label">Avg. Rating</div>
+            </div>
+            <p class="stat-desc">Average star rating on SpigotMC.</p>
+        </div>
+        <div class="stat-card">
+            <div>
+                <div class="stat-number">1.7k</div>
+                <div class="stat-label">Peak Players</div>
+            </div>
+            <p class="stat-desc">Highest concurrent players across servers using our plugins.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Partner -->
+<section class="section fade-in fade-in-delay-3">
+    <div class="partner-section">
+        <a class="partner-banner" href="https://shockbyte.com/billing/aff.php?aff=4416" target="_blank" rel="noopener noreferrer">
+            <div>
+                <div class="partner-banner-label">Official Partner</div>
+                <div class="partner-banner-text">Need server hosting? Get started with Shockbyte.</div>
+            </div>
+            <img src="https://shockbyte.com/assets/img/partners/twitch/shockbyte_affiliate.png" alt="Shockbyte - Minecraft Server Hosting">
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer fade-in fade-in-delay-4">
+    <div class="footer-links">
+        <a class="footer-link" href="https://felixbeinssen.net/imprint" target="_blank" rel="noopener noreferrer">Imprint</a>
+        <a class="footer-link" href="https://github.com/ChafficPlugins" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+    <p class="footer-copyright">&copy; ChafficPlugins 2019&ndash;2025</p>
 </footer>
+
 </body>
 </html>

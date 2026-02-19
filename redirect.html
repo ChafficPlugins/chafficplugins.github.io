@@ -1,83 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4734982214094550"
-            crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>ChafficPlugins</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChafficPlugins - Download</title>
+    <meta name="description" content="Download ChafficPlugins Minecraft server plugins.">
     <link rel="stylesheet" href="style/main.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4734982214094550" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 id="centeredTitle">ChafficPlugins</h1>
-<h3 id="centeredSubTitle">Free high quality plugins for your Minecraft server!</h3>
-<img src="img/bg.png" alt="" id="bgImg" onclick="window.open('https://chafficplugins.github.io')">
+
+<div class="bg-decoration"></div>
+
+<main class="download-page">
+    <div class="download-card">
+        <!-- Icon -->
+        <div class="download-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+        </div>
+
+        <!-- Plugin info (filled by JS) -->
+        <h1 class="download-title" id="downloadTitle">Preparing download&hellip;</h1>
+        <span class="download-version" id="downloadVersion"></span>
+
+        <!-- Progress bar -->
+        <div class="download-progress">
+            <div class="download-progress-bar" id="progressBar"></div>
+        </div>
+        <p class="download-status" id="downloadStatus">Please wait&hellip;</p>
+
+        <!-- Action buttons -->
+        <div class="download-actions">
+            <button class="btn btn-primary" id="downloadButton" disabled onclick="download()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                <span id="downloadButtonText">Wait 5s</span>
+            </button>
+            <a class="btn btn-secondary" href="https://chafficplugins.github.io">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to ChafficPlugins
+            </a>
+        </div>
+
+        <!-- Partner -->
+        <div class="download-partner">
+            <p class="download-partner-label">Official Partner</p>
+            <a href="https://shockbyte.com/billing/aff.php?aff=4416" target="_blank" rel="noopener noreferrer">
+                <img src="https://shockbyte.com/assets/img/partners/twitch/shockbyte_affiliate.png" alt="Shockbyte - Minecraft Server Hosting">
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer link -->
+    <div class="download-footer">
+        <a class="download-footer-link" href="https://felixbeinssen.net/imprint" target="_blank" rel="noopener noreferrer">Imprint</a>
+    </div>
+</main>
 
 <script>
+    // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const plugin = urlParams.get('plugin');
     const version = urlParams.get('version');
 
-    document.getElementById("centeredSubTitle").innerHTML = plugin + "-v" + version + " Download Page";
-
-    for (let i = 0; i <= 5; i++) {
-        setTimeout(() => {
-
-            document.getElementById("downloadButton").innerText = "Wait " + (5 - i) + " Seconds";
-            document.getElementById("scrollButton").innerText = "Wait " + (5 - i) + " Seconds";
-            if (i === 5) {
-                document.getElementById("downloadButton").disabled = false;
-                document.getElementById("downloadButton").innerText = "Download " + plugin + "-v" + version;
-                document.getElementById("scrollButton").disabled = false;
-                document.getElementById("scrollButton").innerText = "Scroll Down";
-            }
-        }, 1000 * i);
+    // Populate page content
+    if (plugin && version) {
+        document.getElementById('downloadTitle').textContent = plugin;
+        document.getElementById('downloadVersion').textContent = 'v' + version;
+        document.title = plugin + ' v' + version + ' - ChafficPlugins Download';
     }
 
+    // Countdown with progress bar
+    var countdown = 5;
+    var progressBar = document.getElementById('progressBar');
+    var statusEl = document.getElementById('downloadStatus');
+    var btnText = document.getElementById('downloadButtonText');
+    var btn = document.getElementById('downloadButton');
+
+    for (var i = 0; i <= countdown; i++) {
+        (function(step) {
+            setTimeout(function() {
+                var progress = (step / countdown) * 100;
+                progressBar.style.width = progress + '%';
+
+                if (step < countdown) {
+                    var remaining = countdown - step;
+                    statusEl.textContent = 'Your download will be ready in ' + remaining + ' second' + (remaining !== 1 ? 's' : '') + '.';
+                    btnText.textContent = 'Wait ' + remaining + 's';
+                } else {
+                    statusEl.textContent = 'Your file is ready.';
+                    btnText.textContent = 'Download ' + plugin + '-v' + version + '.jar';
+                    btn.disabled = false;
+                }
+            }, 1000 * step);
+        })(i);
+    }
+
+    // GitHub release download
     function download() {
-        //get ?plugin parameter and ?version parameter
-        window.open("https://github.com/ChafficPlugins/" + plugin + "/releases/download/v" + version + "/" + plugin + "-v" + version + ".jar")
-    }
-
-    function scrollDown() {
-        //scroll down to the download button slowly
-        window.scrollBy({
-            top: 1000,
-            left: 0,
-            behavior: 'smooth'
-        });
+        window.open(
+            'https://github.com/ChafficPlugins/' + plugin +
+            '/releases/download/v' + version + '/' +
+            plugin + '-v' + version + '.jar'
+        );
     }
 </script>
 
-<div class="plugin-list">
-    <a id="hostingURL" href="https://shockbyte.com/billing/aff.php?aff=4416" target={"_blank"}
-       rel="noreferrer">Cheap Minecraft Server Hosting</a>
-</div>
-
-<div class="plugin-list">
-    <button id="scrollButton" disabled class="button" onclick="scrollDown()">Wait 5 seconds</button>
-</div>
-
-<div class="hostingConatiner">
-    <a href="https://shockbyte.com/billing/aff.php?aff=4416"><img id="hosting" src="https://shockbyte.com/assets/img/partners/twitch/shockbyte_affiliate.png" alt="Minecraft Server Hosting" /></a>
-</div>
-
-<div class="plugin-list">
-    <button id="downloadButton"
-            onclick="download()"
-            disabled>
-        Wait 5 Seconds
-    </button>
-</div>
-
-<a id="imprintLink" href="https://felixbeinssen.net/imprint" target={"_blank"}
-   rel="noreferrer">Imprint</a>
-
-<footer>
-    <p id="copyright">
-        © ChafficPlugins 2019-2023
-    </p>
-</footer>
 </body>
 </html>
