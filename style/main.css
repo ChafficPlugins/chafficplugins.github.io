@@ -156,6 +156,40 @@ body {
     margin: 0 auto;
 }
 
+.hero-docs-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-accent-light);
+    text-decoration: none;
+    padding: 0.625rem 1.5rem;
+    border-radius: 100px;
+    border: 1px solid rgba(217, 70, 239, 0.3);
+    background: var(--color-accent-subtle);
+    transition: all var(--transition);
+}
+
+.hero-docs-link:hover {
+    background: rgba(217, 70, 239, 0.15);
+    border-color: var(--color-accent-light);
+    color: var(--color-white);
+    box-shadow: 0 0 20px var(--color-accent-glow);
+    gap: 0.75rem;
+}
+
+.hero-docs-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition);
+}
+
+.hero-docs-link:hover svg {
+    transform: translateX(2px);
+}
+
 /* --- Section --- */
 .section {
     padding: 2rem 0;
