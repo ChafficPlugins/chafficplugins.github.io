@@ -33,6 +33,6 @@ Docs live in the `docs/` folder of each repository as Markdown files. If your ch
 
 | Repo | Description |
 |------|-------------|
-| [CrucialLib](https://github.com/ChafficPlugins/CrucialLib) | Shared library (fork of CrucialAPI) |
+| [CrucialLib](https://github.com/ChafficPlugins/CrucialLib) | Shared library |
 | [MyTrip](https://github.com/ChafficPlugins/MyTrip) | Drug plugin |
 | [MiningLevels](https://github.com/ChafficPlugins/MiningLevels) | Mining progression |
