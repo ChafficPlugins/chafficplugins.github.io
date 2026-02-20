@@ -36,6 +36,7 @@ theme:
 
 plugins:
   - search
+  - mike
 
 markdown_extensions:
   - admonition
@@ -56,6 +57,9 @@ markdown_extensions:
       permalink: true
 
 extra:
+  version:
+    provider: mike
+    default: latest
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/ChafficPlugins

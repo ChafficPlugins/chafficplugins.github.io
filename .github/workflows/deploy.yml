@@ -6,11 +6,16 @@ on:
   repository_dispatch:
     types: [docs-updated]
   workflow_dispatch:
+    inputs:
+      version:
+        description: >
+          Version label for docs (e.g. "v2.0", "2026.02").
+          Leave empty to only update "latest".
+        required: false
+        default: ''
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -18,13 +23,12 @@ concurrency:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout website repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # --- Pull docs from plugin repos ---
       - name: Checkout MyTrip docs
@@ -75,7 +79,7 @@ jobs:
           echo "Final docs structure:"
           find docs -type f -name "*.md" | sort
 
-      # --- Build MkDocs ---
+      # --- Build & deploy with mike ---
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -88,32 +92,56 @@ jobs:
           path: ~/.cache
           restore-keys: mkdocs-material-
 
-      - name: Install MkDocs Material
-        run: pip install "mkdocs>=1.6,<2" mkdocs-material
+      - name: Install dependencies
+        run: pip install "mkdocs>=1.6,<2" mkdocs-material mike
 
-      - name: Build docs
-        run: mkdocs build
-
-      # --- Combine landing page + docs into one artifact ---
-      - name: Assemble site
+      - name: Configure Git
         run: |
-          mkdir _site
-          # Landing page files
-          cp index.html _site/
-          cp redirect.html _site/
-          cp -r style _site/
-          cp -r img _site/
-          # MkDocs output → /docs/
-          mv site _site/docs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Fetch gh-pages branch
+        run: git fetch origin gh-pages:gh-pages || true
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+      - name: Deploy docs with mike
+        run: |
+          VERSION="${{ github.event.inputs.version || github.event.client_payload.version || '' }}"
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          if [ -n "$VERSION" ]; then
+            # Deploy a named version and update the "latest" alias
+            mike deploy --branch gh-pages --prefix docs --update-aliases "$VERSION" latest
+            echo "Deployed version: $VERSION (aliased as latest)"
+          else
+            # Just update "latest"
+            mike deploy --branch gh-pages --prefix docs latest
+            echo "Deployed: latest"
+          fi
+
+          # Ensure /docs/ redirects to /docs/latest/
+          mike set-default --branch gh-pages --prefix docs latest
+
+      - name: Add landing page to gh-pages
+        run: |
+          # Save landing page files before switching branches
+          mkdir -p /tmp/landing
+          cp index.html /tmp/landing/
+          cp redirect.html /tmp/landing/
+          cp -r style /tmp/landing/
+          cp -r img /tmp/landing/
+
+          # Switch to gh-pages
+          git checkout -f gh-pages
+
+          # Copy landing page files to root
+          cp /tmp/landing/index.html .
+          cp /tmp/landing/redirect.html .
+          rm -rf style img
+          cp -r /tmp/landing/style .
+          cp -r /tmp/landing/img .
+
+          # Commit and push
+          git add index.html redirect.html style/ img/
+          git diff --cached --quiet || git commit -m "Update landing page"
+
+      - name: Push gh-pages
+        run: git push origin gh-pages
