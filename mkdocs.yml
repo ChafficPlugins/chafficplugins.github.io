@@ -36,7 +36,6 @@ theme:
 
 plugins:
   - search
-  - mike
 
 markdown_extensions:
   - admonition
@@ -57,9 +56,6 @@ markdown_extensions:
       permalink: true
 
 extra:
-  version:
-    provider: mike
-    default: latest
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/ChafficPlugins
@@ -78,16 +74,19 @@ nav:
       - Configuration: mytrip/configuration.md
       - Commands & Permissions: mytrip/commands.md
       - API: mytrip/api.md
+      - Versions: mytrip/versions.md
     - MiningLevels:
       - Overview: mininglevels/index.md
       - Installation: mininglevels/installation.md
       - Configuration: mininglevels/configuration.md
       - Commands & Permissions: mininglevels/commands.md
       - API: mininglevels/api.md
+      - Versions: mininglevels/versions.md
   - CrucialLib:
     - Overview: cruciallib/index.md
     - Setup: cruciallib/setup.md
     - API Guide: cruciallib/api-guide.md
     - Migrations: cruciallib/migrations.md
     - Javadoc: cruciallib/javadoc.md
+    - Versions: cruciallib/versions.md
   - Contributing: contributing.md
