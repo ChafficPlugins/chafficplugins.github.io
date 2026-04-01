@@ -671,6 +671,13 @@ body {
     color: var(--color-accent-light);
 }
 
+.footer-affiliate {
+    font-size: 0.6875rem;
+    color: var(--color-gray-400);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
 .footer-copyright {
     font-size: 0.75rem;
     color: var(--color-gray-400);
@@ -971,6 +978,13 @@ body {
 /* --- Download Footer --- */
 .download-footer {
     margin-top: 2rem;
+}
+
+.download-footer-affiliate {
+    font-size: 0.6875rem;
+    color: var(--color-gray-400);
+    margin-bottom: 0.75rem;
+    font-style: italic;
 }
 
 .download-footer-link {
