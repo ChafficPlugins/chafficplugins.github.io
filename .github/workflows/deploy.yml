@@ -101,6 +101,7 @@ jobs:
           # Landing page files
           cp index.html _site/
           cp redirect.html _site/
+          cp privacy.html _site/
           cp -r style _site/
           cp -r img _site/
           # MkDocs output → /docs/
