@@ -524,7 +524,7 @@ body {
     background: linear-gradient(135deg, #38bdf8, #818cf8);
     color: var(--color-white);
     box-shadow: 0 2px 12px rgba(56, 189, 248, 0.25);
-    transition: box-shadow var(--transition), transform var(--transition);
+    transition: box-shadow var(--transition);
 }
 
 .partner-featured:hover .partner-featured-cta-btn {
@@ -535,7 +535,7 @@ body {
     width: 18px;
     height: 18px;
     color: var(--color-gray-300);
-    transition: transform var(--transition);
+    transition: transform var(--transition), color var(--transition);
 }
 
 .partner-featured:hover .partner-featured-cta svg {
