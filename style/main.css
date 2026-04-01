@@ -684,6 +684,107 @@ body {
 }
 
 /* ============================================
+   Legal / Privacy Page
+   ============================================ */
+
+.legal-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2rem;
+}
+
+.legal-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-gray-400);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color var(--transition), gap var(--transition);
+}
+
+.legal-back:hover {
+    color: var(--color-accent-light);
+    gap: 0.75rem;
+}
+
+.legal-back svg {
+    width: 16px;
+    height: 16px;
+}
+
+.legal-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.legal-updated {
+    font-size: 0.8125rem;
+    color: var(--color-gray-400);
+    margin-bottom: 2.5rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+.legal-section p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-300);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
+.legal-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0;
+}
+
+.legal-section li {
+    font-size: 0.9375rem;
+    color: var(--color-gray-300);
+    line-height: 1.7;
+    padding: 0.375rem 0 0.375rem 1.25rem;
+    position: relative;
+}
+
+.legal-section li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+.legal-section a {
+    color: var(--color-accent-light);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.legal-section a:hover {
+    color: var(--color-white);
+}
+
+/* ============================================
    Download / Redirect Page
    ============================================ */
 
@@ -978,6 +1079,11 @@ body {
 /* --- Download Footer --- */
 .download-footer {
     margin-top: 2rem;
+}
+
+.download-footer-sep {
+    color: var(--color-gray-400);
+    font-size: 0.75rem;
 }
 
 .download-footer-affiliate {
