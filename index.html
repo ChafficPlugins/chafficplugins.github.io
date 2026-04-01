@@ -109,53 +109,81 @@
     </div>
 </section>
 
-<!-- Partner -->
+<!-- Featured Partner -->
 <section class="section fade-in fade-in-delay-3">
-    <p class="section-label">Partners</p>
-    <h2 class="section-title">Our Recommendations</h2>
+    <p class="section-label">Featured</p>
+    <h2 class="section-title">Protect Your Privacy</h2>
     <div class="partner-section">
-        <a class="partner-banner" id="partnerBanner" href="#" target="_blank" rel="noopener noreferrer">
-            <div class="partner-banner-brand">
-                <svg class="partner-banner-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                <span class="partner-banner-name" id="partnerName"></span>
+        <a class="partner-featured" href="https://incogni.cello.so/awbgUw73CF4" target="_blank" rel="noopener noreferrer">
+            <div class="partner-featured-badge">58% OFF</div>
+            <div class="partner-featured-content">
+                <div class="partner-featured-header">
+                    <svg class="partner-featured-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <h3 class="partner-featured-name">Incogni</h3>
+                </div>
+                <p class="partner-featured-desc">Remove your personal data from data brokers and the web. Take back control of your online privacy.</p>
+                <div class="partner-featured-highlights">
+                    <div class="partner-featured-highlight">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                        <span>58% off annual plans</span>
+                    </div>
+                    <div class="partner-featured-highlight">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                        <span>Automated data removal</span>
+                    </div>
+                    <div class="partner-featured-highlight">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
+                        <span>30-day money-back guarantee</span>
+                    </div>
+                </div>
             </div>
-            <div class="partner-banner-body">
-                <div class="partner-banner-text" id="partnerText"></div>
-                <div class="partner-banner-offer" id="partnerOffer"></div>
+            <div class="partner-featured-cta">
+                <span class="partner-featured-cta-btn">Get Incogni</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
             </div>
-            <svg class="partner-banner-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
         </a>
     </div>
 </section>
 
-<script>
-    // Affiliate partner rotation
-    var partners = [
-        {
-            name: 'Shockbyte',
-            url: 'https://shockbyte.com/billing/aff.php?aff=4416',
-            text: 'Affordable Minecraft server hosting',
-            offer: '<span class="partner-banner-offer-text">Use code</span> <span class="partner-banner-code">LAUNCH</span> <span class="partner-banner-offer-text">for 25% off your first month</span>'
-        },
-        {
-            name: 'WiseHosting',
-            url: 'https://wisehosting.com/aff.php?aff=3248',
-            text: 'Reliable Minecraft server hosting',
-            offer: '<span class="partner-banner-offer-text">Premium performance at great prices</span>'
-        },
-        {
-            name: 'Incogni',
-            url: 'https://incogni.cello.so/awbgUw73CF4',
-            text: 'Remove your personal data from the web',
-            offer: '<span class="partner-banner-offer-text">Get</span> <span class="partner-banner-code">58% OFF</span> <span class="partner-banner-offer-text">annual plans &mdash; earn up to $120 per referral</span>'
-        }
-    ];
-    var partner = partners[Math.floor(Math.random() * partners.length)];
-    document.getElementById('partnerBanner').href = partner.url;
-    document.getElementById('partnerName').textContent = partner.name;
-    document.getElementById('partnerText').textContent = partner.text;
-    document.getElementById('partnerOffer').innerHTML = partner.offer;
-</script>
+<!-- Partners -->
+<section class="section fade-in fade-in-delay-3">
+    <p class="section-label">Partners</p>
+    <h2 class="section-title">Need a Server?</h2>
+    <div class="partner-section">
+        <div class="partner-grid">
+            <a class="partner-card" href="https://shockbyte.com/billing/aff.php?aff=4416" target="_blank" rel="noopener noreferrer">
+                <div class="partner-card-top">
+                    <svg class="partner-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span class="partner-card-name">Shockbyte</span>
+                </div>
+                <p class="partner-card-desc">Affordable Minecraft server hosting</p>
+                <div class="partner-card-offer">
+                    <span class="partner-card-offer-text">Use code</span>
+                    <span class="partner-card-code">LAUNCH</span>
+                    <span class="partner-card-offer-text">for 25% off</span>
+                </div>
+                <div class="partner-card-cta">
+                    <span>Get Started</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+                </div>
+            </a>
+            <a class="partner-card" href="https://wisehosting.com/aff.php?aff=3248" target="_blank" rel="noopener noreferrer">
+                <div class="partner-card-top">
+                    <svg class="partner-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span class="partner-card-name">WiseHosting</span>
+                </div>
+                <p class="partner-card-desc">Reliable Minecraft server hosting</p>
+                <div class="partner-card-offer">
+                    <span class="partner-card-offer-text">Premium performance at great prices</span>
+                </div>
+                <div class="partner-card-cta">
+                    <span>Get Started</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd"/></svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer class="site-footer fade-in fade-in-delay-4">
